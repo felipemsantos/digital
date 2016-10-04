@@ -1,0 +1,20 @@
+[[modules-operations]]
+=== Operations
+Este módulo reune *processos e/ou sistemas* que atendam diretamente a questões relacionadas a *operação*. Por exemplo:
+processo de tratamento de erros, sistema de monitoramento, sistema de agregação de logs, etc.
+
+==== API Gateway
+
+==== Carrier Proxy
+
+==== Error Handler
+
+==== Media Inventory
+
+==== Notification Gateway
+
+==== Operations Console
+
+==== Registry
+
+==== Identity Manager

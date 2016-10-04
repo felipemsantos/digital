@@ -1,0 +1,47 @@
+[[reference-guide-architecture]]
+=== Arquitetura de Referência
+"_A idéia base de uma Arquitetura de Referência é reunir um conjunto de boas-práticas que guiem uma empresa/organização na
+analise, desenho, planehamento e execução de tarefas com o objetivo de executar tudo que esteja relacionado a sua
+estratégia de negócio. Arquiteturas de referência aplicam princípios e práticas a fim de guiar uma empresa/organização
+em alterações de negócio, informações, processos e tecnologias necessárias para executar suas estratégias."_
+
+A definição acima mostra que o termo *Arquitetura de Referência* nada tem a ver com tecnologia e sim com princípios e
+práticas de como realizar tarefas, geralemnte, repetitivas, de forma eficiente o bastante a ponto de auxiliar que metas
+estratégicas de uma companhia sejam alcançadas de forma rápida, simples, com baixo custo e, ao mesmo tempo, respeitando
+os processos de negócio, papeis e resposabilidades existentes em uma empresa.
+
+Algumas processos/frameworks de mercado (como http://www.wthreex.com/rup/largeprojects/index.htm[RUP - Rational Unified
+Process]) sugerem que toda arquitetura de referência seja divida em níveis diferentes de abstração (ou views), de forma
+a flexibilizar o uso de cada nível.
+
+Sendo assim, e lembrando dos conceitos vistos no xref:about#about-concepts[início deste documento], vamos seguir a
+seguinte propsota:
+
+image::a.png
+
+==== Arquitetura Conceitual
+
+Este nível de abstração reune componentes lógico/conceituais responssáveis por determinadas tarefas e/ou funcionalidades,
+que podem ser implementadas em um único ou vários sistemas/plataformas.
+
+Observando a nossa infra-estrutura como um todo e o funcionamento da companhia, podemos definir os seguintes componentes
+conceituais:
+
+===== Web & Content Portals
+===== Call Center
+===== API Gateway
+===== Channels Manager
+===== Campaign Manager
+===== Subscriptions Manager
+===== Media Inventory
+===== Product Catalog
+===== Billing Gateway
+===== Carrier Proxy
+===== Notification Gateway
+===== Analytical HUB
+===== Registry
+===== Operational Console
+
+
+
+

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>fms.digital</groupId>
+    <artifactId>digital</artifactId>
+    <version>1.0.0.M1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>Digital</name>
+
+    <inceptionYear>2016</inceptionYear>
+    <url>https://github.com/felipemsantos/digital</url>
+
+    <scm>
+        <connection>scm:git:ssh://git@github.com/felipemsantos/digital.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/felipemsantos/digital.git</developerConnection>
+        <url>https://github.com/felipemsantos/digital</url>
+        <tag>HEAD</tag>
+    </scm>
+
+    <issueManagement>
+        <system>github.com</system>
+        <url>${project.url}/issues</url>
+    </issueManagement>
+
+    <developers>
+        <developer>
+            <id>felipemsantos</id>
+            <name>Felipe Santos</name>
+            <email>felipemsantos@gmail.com</email>
+        </developer>
+    </developers>
+
+    <modules>
+        <module>base</module>
+        <!-- <module>business</module>  -->
+        <module>docs</module>
+        <!-- <module>operations</module> -->
+    </modules>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.5.3</version>
+                <configuration>
+                    <autoVersionSubmodules>true</autoVersionSubmodules>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-changes-plugin</artifactId>
+                <version>2.12</version>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

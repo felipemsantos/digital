@@ -1,0 +1,20 @@
+[[modules-business]]
+=== Business
+Este módulo reune *processos e/ou sistemas* que atendam diretamente a questões de *negócio*. Por exemplo: processo de
+atendimento de clientes, sistema call center, etc.
+
+==== Analytical HUB*
+
+==== Billing Gateway
+
+==== Call Center
+
+==== Campaign Manager
+
+==== Channels Manager
+
+==== Product Catalog
+
+==== Subscriptions Manager
+
+==== Web & Content Portals

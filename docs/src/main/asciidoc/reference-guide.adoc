@@ -1,0 +1,4 @@
+[[reference-guide]]
+== Guia de referência
+
+include::reference-guide-architecture.adoc[]
