@@ -1,10 +1,7 @@
-[[getting-started]]
+[[introducao]]
 == Introdução
 
-[[getting-started-overview]]
-=== Overview
-
-O {project-name} é uma proposta de organização, classificação e desenvolvimento de plataformas/sistemas modulares baseados na
+O {project-name}, em poucas palavras, é uma proposta de organização, classificação e desenvolvimento de plataformas/sistemas modulares baseados na
 ideia do uso de uma arquitetura de microserviços. Basicamente, podemos dizer, que este projeto é uma prova de conceito
 (dentro do possível, muito próxima da realidade) sobre como implementar um conjunto de sistemas de responsabilidades
 distintas, porém que funcionam de forma colaborativa e distribuída.

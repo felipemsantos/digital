@@ -1,0 +1,6 @@
+[[sobre]]
+== Sobre
+
+O {project-name} é uma iniciativa, ou se preferir, uma prova de conceito sobre organização,
+metodologia, arquitetura/engenharia de software e boas práticas em geral no que se refere
+a produção de um software como base de um produto.

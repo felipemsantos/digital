@@ -1,4 +1,4 @@
-= {project-name} Docs
+= {project-name}
 Felipe Santos
 :project-version: 1.0 (wiki)
 ifndef::host-github[:ext-relative: {outfilesuffix}]
@@ -8,8 +8,8 @@ ifndef::host-github[:ext-relative: {outfilesuffix}]
 :hide-uri-scheme:
 //:revnumber: {project-version}
 
-include::about.adoc[]
-include::getting-started.adoc[]
+include::sobre.adoc[]
+include::introducao.adoc[]
 include::modules.adoc[]
 include::how-tos.adoc[]
 include::faq.adoc[]

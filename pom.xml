@@ -33,6 +33,7 @@
 
     <modules>
         <module>base</module>
+        <module>services</module>
         <!-- <module>business</module>  -->
         <module>docs</module>
         <!-- <module>operations</module> -->
