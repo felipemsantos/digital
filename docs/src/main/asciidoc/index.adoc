@@ -1,0 +1,16 @@
+= {project-name}
+Felipe Santos
+:project-version: 1.0 (wiki)
+ifndef::host-github[:ext-relative: {outfilesuffix}]
+{project-version}
+:doctype: book
+:toc2:
+:hide-uri-scheme:
+//:revnumber: {project-version}
+
+include::sobre.adoc[]
+include::introducao.adoc[]
+include::metodologia-governanca.adoc[]
+//include::how-tos.adoc[]
+//include::faq.adoc[]
+//include::reference-guide.adoc[]

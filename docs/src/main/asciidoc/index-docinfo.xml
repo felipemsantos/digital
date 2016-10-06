@@ -1,0 +1,6 @@
+<productname>{project-name}</productname>
+<releaseinfo>{project-version}</releaseinfo>
+<copyright>
+    <year>2016</year>
+    <holder>DinDin</holder>
+</copyright>

@@ -1,0 +1,13 @@
+[[introducao]]
+== Introdução
+
+O {project-name}, em poucas palavras, é uma proposta de organização, classificação e desenvolvimento de plataformas/sistemas modulares baseados na
+ideia do uso de uma arquitetura de microserviços. Basicamente, podemos dizer, que este projeto é uma prova de conceito
+(dentro do possível, muito próxima da realidade) sobre como implementar um conjunto de sistemas de responsabilidades
+distintas, porém que funcionam de forma colaborativa e distribuída.
+
+No decorrer deste documento serão apresentados conceitos relativos a arquitetura de software (conceitual e técnica) que
+apoiam a forma de trabalhar proposta por este projeto.
+
+Por fim, podemos dizer que o {project-name} é um framework que reune conceitos, processos, boas práticas e, até, componentes
+de software que apoiam o desenvolvimento, manutenção e operação de aplicações modulares e distribuidas.
