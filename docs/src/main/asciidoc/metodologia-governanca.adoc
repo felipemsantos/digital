@@ -1,0 +1,28 @@
+[[metodologia-governanca]]
+== Metodologia e Governança
+
+Tomando como base a premissa de que a prática de métodos de gestão ágil é efetivamente uma
+boa prática e as necessidades do projeto, o método escolhido para gerir todas as atividades
+no contexto do projeto foi o Scrum. Para mais informações acesse as referências abaixo:
+
+* http://www.desenvolvimentoagil.com.br/scrum/
+* https://pt.wikipedia.org/wiki/Scrum_(desenvolvimento_de_software)
+
+=== Templates
+
+* *Épicos/Histórias/tarefas:*
+```
+    * Definição:
+        Como <...>,
+        eu gostaria de <...>,
+        para que <...>.
+
+    * Critérios de aceitação:
+        * NOME DO CENÁRIO
+            Dado que <...>
+            e <...>,
+            quando <...>
+            e <...>,
+            então <...>
+            e <...>.
+```

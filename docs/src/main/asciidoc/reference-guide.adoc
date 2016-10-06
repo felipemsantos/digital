@@ -1,4 +1,107 @@
 [[reference-guide]]
 == Guia de referência
 
+
+[[getting-started-concepts]]
+=== Conceitos
+
+Antes de mais nada é necessário deixar claro alguns conceitos que formam a base de conhecimento sobre a qual o projeto
+foi construído.
+
+[[getting-started-concepts-bss-oss]]
+==== BSS e OSS
+
+BSS e OSS são, respectivamente, siglas para *Business Support Systems* e *Operation Support Systems*, ou seja, sistemas
+de apoio ao negócio e sistemas de apoio a operação (ou apoio operacional). A categorização de plataformas/sistemas de TI
+surgiu em empresas de Telecomunicações e tem como objetivo, de certa forma, agrupar sistemas de acordo com seu contexto
+de funcionamento e/ou uso dentro de uma empresa ou organização, ou seja, de acordo com suas responsabilidades. Basicamente,
+a proposta é que todo e qualquer sistema se encaixe como algo que suporte o negócio ou a operação de uma companhia.
+
+Vamos tentar usar algo do dia-a-dia para exemplificar. Imagine que um taxi é uma empresa, o taxímetro pode ser parte dos
+sistemas de suporte ao negócio (Taxi BSS), ele é utilizado para contabilizar o uso do serviço, coletar o dinheiro, imprimir
+o comprovante de pagamento da corrida, etc. E tudo que se vê no painel do taxi é parte dos sistemas de suporte a operação
+(Taxi OSS) e você é o motorista e precisa ter certeza de que o taxi funciona perfeitamente, na velocidade correta e que o seu cliente
+está satisfeito e confortavel no seu assento e aproveitando a corrida. Agora, imagine que o cliente reclama da temperatura
+dizendo que está muito quente, imediatamente você olha para o painel e verifica que o termostato do ar-condicionado marca
+18°C e pensa que está uma temperatura agradável, porém o cliente é quem manda, então você volta ao painel, "calibra" a
+temperatura e monitora o indicador de satisfação do cliente.
+
+image::taxi-dashboard.jpg[title="Taxi Dashboard",align="center"]
+
+No exemplo do taxi é possivel ver, exatamente, como que as resposabilidades dos sistemas indicam sua categoria dentro
+dos conceitos BSS e OSS, alguns sistemas são feitos para fazer com que o produto de uma empresa seja ofertado, vendido e
+ativado, já outros sistemas servem meramente para possibilitar que os sistemas que realizam a oferta, venda e ativação
+funcionem da maneira correta (ou mínimo esperada) e garantir que o monitoramento, parte da tarefa de operar os sistemas
+alinhado às expectativas de negócio, possa retroalimentar os sistemas de negócio de forma a fazer a oferta, a venda e a
+ativação de forma mais eficiente.
+
+[TIP]
+====
+.Referências
+* https://en.wikipedia.org/wiki/Business_support_system[BSS @ Wikipedia]
+* https://en.wikipedia.org/wiki/Operations_support_system[OSS @ Wikipedia]
+====
+
+[[getting-started-concepts-microservices]]
+==== Microserviço
+É um "estilo" de arquitetura de software que propõe que aplicações complexas devem ser divididas em pequenas partes
+(serviços) automomas, de processamento independente, focadas em fazer muito bem apenas uma tarefa, capazes de se comunicar
+umas com as outras através APIs.
+
+Voltando ao exemplo do xref:about#about-concepts-bss-oss[taxi], lembre que cada componente dentro do taxi representa um
+componente que, de certa forma, trabalham de forma colaborativa, partindo deste ponto, podemos afirmar que o taxímetro é
+um *monolito*, um componente único que realiza diversas funções ao mesmo tempo, já o termostato é um componente pequeno,
+autonomo, focado em fazer muito bem uma única tarefa, ou seja, um *microserviço*.
+
+Transportanto o exemplo do taxi para o nosso dia-a-dia, de sistemas, sprints, deployments, etc. Vamos pensar em um sistema
+de Billing, um sistema que faz parte do grupo *BSS*, é esperado que ele entregue algumas funções como, tarifar um cliente
+com base na composição de preços de uma oferta de produto e entenda por tarifar, realizar uma transação financeira de
+cobrança através de alguma entidade, instuição ou parceiro. Ao mesmo tempo este sistema deve ser capaz de realizar extornos
+de tarifação, ou seja, desfazer um pagamento através de uma entidade, instuição ou parceiro. Além disso, o mesmo deve ser
+capaz de apresentar _dashboards_ consolidados com a visão de como as tarifações estão ocorrendo, ou seja, se todos os
+pedidos de tarifação sendo atendidos, quais estão dando certo e quais estão dando errado.
+
+Podemos perceber que este sistema pode ser dividido em várias pequenas partes, cada uma realizando uma função apenas,
+porém com extremo controle sobre a mesma, quando necessário estas partes _se falam_ para que possam realizar suas funções.
+Ou seja, podemos desenvolver uma plataforma baseada no estilo arquitetural de microserviços em prejudicar a qualidade do
+do que o sistema deve entregar.
+
+Ai vem a dúvida, por que devemos utilizar esta nova forma de fazer as coisas? Para responder a pergunta de 1 bilhão de
+dolares vamos observar o seguinte:
+
+1. Componentes de TI autonomos tendem a não ser prejudicados em função da degradação de outros componentes dentro de uma
+mesma infra-estrutura;
+2. Se um componete é pequeno o suficiente, é possível, quando necessário, colocar vários componentes iguais ligados dentro
+de uma mesma infra-estrutura, um ao lado do outro, para atender a uma demanda maior durante um determinado período do dia
+ou do mês e, em seguinda, desligar vários destes componetes, mantendo apenas o mínimo _no ar_ para manter tudo funcionando
+utilizando menos recurso;
+
+Estes dois pontos basicamente resumem duas características de qualquer implementação baseada na *Arquitetura de Microserviços*
+resiliência e escalabilidade. Um componente é escalável se possui a capacidade de incrementar (ou decrementar) seu pontencial
+de trabalho de acordo com características específicas, geralmente o aumento (ou diminuição) da demanda que o mesmo precisa
+atender, e um componente é resiliente quando é capaz de continuar a atender uma determinada demanda sempre e continuamente
+da mesma forma. O que podemos concluir é que para um componente ser resiliente, seria uma boa prática, que o mesmo seja
+escalável.
+
+Agora pense novamente no *monolito* como um único compoente que reune várias funcionlidades:
+
+image::monolito-vs-microservicos.png[title="Monoliths and Microservices @ Martin Fowler",align="center"]
+
+E pense no mesmo compoente divido em vários *microserviços* cada um tratando de uma determinada funcionalidade. A tendência
+é que é muito mais simples de gerenciar a necessidade de escalar pequenas partes do que um bloco imenso.
+
+[TIP]
+====
+.Referências
+* http://martinfowler.com/microservices[Microservices Resource Guide @ Martin Fowler]
+* https://www.safaribooksonline.com/library/view/the-principles-of/9781491935811/[The Principles of Microservices @ SafariBooks]
+* https://en.wikipedia.org/wiki/Microservices[Microservices @ Wikipedia]
+* http://pt.slideshare.net/nathariel/patterns-for-building-resilient-and-scalable-microservices-platform-onaws-full[Patterns
+for build resilient and scalable microservies platform on AWS @ Slideshare.net]
+====
+
+[[getting-started-concepts-devops]]
+==== DevOps
+
+
 include::reference-guide-architecture.adoc[]
